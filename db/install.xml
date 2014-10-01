@@ -6,7 +6,7 @@
   <TABLES>
     <TABLE NAME="unilogin_tickets" COMMENT="">
       <FIELDS>
-        <FIELD NAME="ticket" TYPE="binary" LENGTH="16" NOTNULL="true"/>
+        <FIELD NAME="ticket" TYPE="char" LENGTH="32" NOTNULL="true"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="ticket"/>

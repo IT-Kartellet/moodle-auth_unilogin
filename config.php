@@ -1,5 +1,7 @@
 <?php
 
+defined('MOODLE_INTERNAL') || die();
+
 $settings = new admin_settingpage('auth_unilogin', 'UNI Login');
 
 $settings->add(new admin_setting_heading(
