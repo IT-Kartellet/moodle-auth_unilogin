@@ -22,6 +22,7 @@
  * @license    MIT
  */
 
+
 // Settings overview page
 $string['auth_unilogindescription'] = 'A plugin to login users using the Danish UNI Login service.';
 $string['pluginname'] = 'UNI Login';
@@ -47,9 +48,24 @@ $string['login_type_sso'] = 'Single Sign On';
 $string['login_type_sli'] = 'Single Login';
 
 $string['validation_behaviour'] = 'Validation behaviour';
-$string['validation_behaviour_description'] = 'How should tickets returned from UNI C be validated? Database saves tickets in a table in the DB to ensure that each ticket is only used once, while time ensures that the ticket has been issued within the last x seconds (see option below)';
+$string['validation_behaviour_description'] = 'How should tickets returned from UNI C be validated? Database saves tickets in a table 
+in the DB to ensure that each ticket is only used once, while time ensures that the ticket has been issued within the last x seconds 
+(see option below)';
 $string['validation_behaviour_db'] = 'Database';
 $string['validation_behaviour_time'] = 'Time';
 
 $string['validatetime'] = 'Validation time limit';
 $string['validatetime_description'] = 'The maximum age in seconds for a ticket to be considered valid.';
+
+$string['login_behaviour'] = 'Login behaviour';
+$string['login_behaviour_description'] = "How should the page behave when the user clicks on \"login\"? Link means that a link with the 
+text \"UNI•Login\" will be inserted into the page before the regular moodle login form. The link-text can be changed with the 
+setting below. Redirect means that the user will be sent directly to the UNI•Login page. This also means that regular 
+moodle logins will no longer work, since the user will always be redirected to UNI•Login. However, for administrative access and the like, 
+the regular moodle login form can still be accessed by appending '?unilogin=false' to the login url, like so: {$CFG->wwwroot}/login/index.php?unilogin=false.";
+$string['login_behaviour_link'] = 'Link';
+$string['login_behaviour_redirect'] = 'Redirect';
+$string['login_behaviour_link_text'] = 'Link text';
+$string['login_behaviour_link_text_description'] = 'The text used to display a link to the UNI•Login page.';
+$string['login_behaviour_link_selector'] = 'Link insertion selector';
+$string['login_behaviour_link_selector_description'] = 'The selector to insert the login link before.';

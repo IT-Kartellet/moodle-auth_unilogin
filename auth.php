@@ -37,7 +37,22 @@ class auth_plugin_unilogin extends auth_plugin_base {
     }
 
     function loginpage_hook() {
-        echo 'woot';
+        global $CFG, $PAGE;
+
+        if (empty($CFG->alternateloginurl) && $this->config->login_behaviour === 'redirect' && @$_GET['unilogin'] !== 'false') {
+            // login/index.php will automatically redirect based on this alternate login url
+            $CFG->alternateloginurl = $this->get_url();
+        } else {
+            $PAGE->requires->yui_module(
+                'moodle-auth_unilogin-link_injector', 
+                'M.auth_unilogin.link_injector.init', 
+                array(
+                    $this->get_url(), 
+                    $this->config->login_behaviour_link_text, 
+                    $this->config->login_behaviour_link_selector
+                )
+            );
+        }
     }
 
     function user_login($username, $password) {
@@ -55,7 +70,7 @@ class auth_plugin_unilogin extends auth_plugin_base {
     }
 
     private function get_url($action = 'login') {
-        $prefix = $this->config->auth_type;
+        $prefix = $this->config->login_type;
         $base = "https://{$prefix}.emu.dk/";
 
         switch ($action) {
