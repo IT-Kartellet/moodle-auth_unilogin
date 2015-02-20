@@ -25,6 +25,20 @@ $settings->add(new admin_setting_configtext(
     null)
 );
 
+$settings->add(new admin_setting_configtext(
+    'auth_unilogin/wsid', 
+    get_string('ws_id', 'auth_unilogin'),
+    get_string('ws_id_description', 'auth_unilogin'),
+    null)
+);
+
+$settings->add(new admin_setting_configtext(
+    'auth_unilogin/wssecret', 
+    get_string('ws_secret', 'auth_unilogin'),
+    get_string('ws_secret_description', 'auth_unilogin'),
+    null)
+);
+
 $settings->add(new admin_setting_heading(
     'auth_unilogin/h2',
     get_string('application_settings_header', 'auth_unilogin'),
@@ -84,3 +98,51 @@ $settings->add(new admin_setting_configtext(
 );
 
 echo $settings->output_html();
+
+
+
+// Taken from auth/admin_config, but cut down to only show lock and updatelock selectors
+global $OUTPUT;
+echo $OUTPUT->heading(get_string('auth_fieldlocks', 'auth'));
+echo '<div class="box generalbox formsettingheading"><p>' . get_string('fieldlocks', 'auth_unilogin') . '</p>
+</div>';
+
+$lockoptions = array ('unlocked'        => get_string('unlocked', 'auth'),
+                      'unlockedifempty' => get_string('unlockedifempty', 'auth'),
+                      'locked'          => get_string('locked', 'auth'));
+$updatelocaloptions = array('oncreate'  => get_string('update_oncreate', 'auth'),
+                            'onlogin'   => get_string('update_onlogin', 'auth'));
+
+$pluginconfig = get_config("auth/unilogin");
+
+foreach (array('firstname', 'lastname', 'email') as $field) {
+    // Define some vars we'll work with.
+    if (!isset($pluginconfig->{"field_updatelocal_$field"})) {
+        $pluginconfig->{"field_updatelocal_$field"} = '';
+    }
+    if (!isset($pluginconfig->{"field_lock_$field"})) {
+        $pluginconfig->{"field_lock_$field"} = '';
+    }
+
+    $fieldname = get_string($field);
+    
+    $varname = 'field_map_' . $field;
+
+    echo '<div class="form-item"><div class="form-label"><label>' . $fieldname . '</label></div>';
+
+    echo '<div class="form-setting">';
+    echo '<label for="menulockconfig_field_updatelocal_'.$field.'">'.get_string('auth_updatelocal', 'auth') . '</label>';
+    echo html_writer::select($updatelocaloptions, "lockconfig_field_updatelocal_{$field}", $pluginconfig->{"field_updatelocal_$field"}, false);
+    
+    echo '<label for="menulockconfig_field_lock_'.$field.'">'.get_string('auth_fieldlock', 'auth') . '</label>';
+    echo html_writer::select($lockoptions, "lockconfig_field_lock_{$field}", $pluginconfig->{"field_lock_$field"}, false);
+    echo '</div></div>';
+    
+
+    echo '</td>';
+    if (!empty($helptext)) {
+        echo '<td rowspan="' . count($user_fields) . '">' . $helptext . '</td>';
+        $helptext = '';
+    }
+    echo '</tr>';
+}

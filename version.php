@@ -24,6 +24,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 20140100100;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->version   = 2014022001;        // The current plugin version (Date: YYYYMMDDXX)
 $plugin->requires  = 2014050800;        // Requires this Moodle version
 $plugin->component = 'auth_unilogin';    // Full name of the plugin (used for diagnostics)

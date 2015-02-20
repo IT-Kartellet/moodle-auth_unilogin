@@ -6,10 +6,11 @@
   <TABLES>
     <TABLE NAME="unilogin_tickets" COMMENT="">
       <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="ticket" TYPE="char" LENGTH="32" NOTNULL="true"/>
       </FIELDS>
       <KEYS>
-        <KEY NAME="primary" TYPE="primary" FIELDS="ticket"/>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
       </KEYS>
     </TABLE>
   </TABLES>

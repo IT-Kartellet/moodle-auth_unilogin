@@ -32,10 +32,16 @@ $string['application_info_header'] = 'Application info';
 $string['application_info_description'] = 'Basic information about your application. You get this infromation by registering with UNI C';
 
 $string['application_id'] = 'Application ID';
-$string['application_id_description'] = 'Each application has a unique used to identify to UNI C';
+$string['application_id_description'] = 'Each application has a unique ID used to identify to UNI C';
+
+$string['ws_id'] = 'Webservice ID';
+$string['ws_id_description'] = 'Each application has a unique used to identify to the UNI C webservice';
 
 $string['application_secret'] = 'Application secret';
 $string['application_secret_description'] = 'The secret that is used, together with the application ID to identify to UNI C';
+
+$string['ws_secret'] = 'Webservice secret';
+$string['ws_secret_description'] = 'The secret that is used, together with the webservice ID to identify to the UNI C webservice';
 
 $string['application_settings_header'] = 'Login settings';
 $string['application_settings_description'] = 'Settings for how the user should login';
@@ -68,4 +74,10 @@ $string['login_behaviour_redirect'] = 'Redirect';
 $string['login_behaviour_link_text'] = 'Link text';
 $string['login_behaviour_link_text_description'] = 'The text used to display a link to the UNI•Login page.';
 $string['login_behaviour_link_selector'] = 'Link insertion selector';
-$string['login_behaviour_link_selector_description'] = 'The selector to insert the login link before.';
+$string['login_behaviour_link_selector_description'] = 'The selector to insert the login link into. The login link will be placed in as the last child of the selected element. With the bootstrap theme, this means that #login will insert it after the "forgot your password" link';
+
+$string['fieldlocks'] = 'Select what should happen to each user field.';
+
+$string['ticketvalidationerror'] = 'The ticket returned by UNI•Login could not be validated. It has either expired, or already been used.';
+$string['missingparameterserror'] = 'Missing parameters';
+$string['webserviceerror'] = 'There was en error contacting the UNI•Login webservice';
