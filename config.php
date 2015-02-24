@@ -13,7 +13,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
- 
+
 /**
  * This is a one-line short description of the file.
  *
@@ -21,7 +21,6 @@
  * if you like, and it can span multiple lines.
  *
  * @package    auth_unilogin
- * @category   authentication
  * @copyright  2015 Jan Aagaard Meier (IT-Kartellet)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -38,28 +37,28 @@ $settings->add(new admin_setting_heading(
 );
 
 $settings->add(new admin_setting_configtext(
-    'auth_unilogin/id', 
+    'auth_unilogin/id',
     get_string('application_id', 'auth_unilogin'),
     get_string('application_id_description', 'auth_unilogin'),
     null)
 );
 
 $settings->add(new admin_setting_configtext(
-    'auth_unilogin/secret', 
+    'auth_unilogin/secret',
     get_string('application_secret', 'auth_unilogin'),
     get_string('application_secret_description', 'auth_unilogin'),
     null)
 );
 
 $settings->add(new admin_setting_configtext(
-    'auth_unilogin/wsid', 
+    'auth_unilogin/wsid',
     get_string('ws_id', 'auth_unilogin'),
     get_string('ws_id_description', 'auth_unilogin'),
     null)
 );
 
 $settings->add(new admin_setting_configtext(
-    'auth_unilogin/wssecret', 
+    'auth_unilogin/wssecret',
     get_string('ws_secret', 'auth_unilogin'),
     get_string('ws_secret_description', 'auth_unilogin'),
     null)
@@ -77,7 +76,9 @@ $settings->add(new admin_setting_configselect(
     get_string('login_type', 'auth_unilogin'),
     get_string('login_type_description', 'auth_unilogin'),
     'sso',
-    array('sso' => get_string('login_type_sso', 'auth_unilogin'), 'sli' => get_string('login_type_sli', 'auth_unilogin'))
+    array(
+        'sso' => get_string('login_type_sso', 'auth_unilogin'),
+        'sli' => get_string('login_type_sli', 'auth_unilogin'))
     )
 );
 
@@ -86,7 +87,9 @@ $settings->add(new admin_setting_configselect(
     get_string('validation_behaviour', 'auth_unilogin'),
     get_string('validation_behaviour_description', 'auth_unilogin'),
     'time',
-    array('time' => get_string('validation_behaviour_time', 'auth_unilogin'), 'db' => get_string('validation_behaviour_db', 'auth_unilogin'))
+    array(
+        'time' => get_string('validation_behaviour_time', 'auth_unilogin'),
+        'db' => get_string('validation_behaviour_db', 'auth_unilogin'))
     )
 );
 
@@ -103,7 +106,9 @@ $settings->add(new admin_setting_configselect(
     get_string('login_behaviour', 'auth_unilogin'),
     get_string('login_behaviour_description', 'auth_unilogin'),
     'link',
-    array('link' => get_string('login_behaviour_link', 'auth_unilogin'), 'redirect' => get_string('login_behaviour_redirect', 'auth_unilogin'))
+    array(
+        'link' => get_string('login_behaviour_link', 'auth_unilogin'),
+        'redirect' => get_string('login_behaviour_redirect', 'auth_unilogin'))
     )
 );
 
@@ -151,7 +156,7 @@ foreach (array('firstname', 'lastname', 'email') as $field) {
     }
 
     $fieldname = get_string($field);
-    
+
     $varname = 'field_map_' . $field;
 
     echo '<div class="form-item"><div class="form-label"><label>' . $fieldname . '</label></div>';
@@ -159,16 +164,10 @@ foreach (array('firstname', 'lastname', 'email') as $field) {
     echo '<div class="form-setting">';
     echo '<label for="menulockconfig_field_updatelocal_'.$field.'">'.get_string('auth_updatelocal', 'auth') . '</label>';
     echo html_writer::select($updatelocaloptions, "lockconfig_field_updatelocal_{$field}", $pluginconfig->{"field_updatelocal_$field"}, false);
-    
+
     echo '<label for="menulockconfig_field_lock_'.$field.'">'.get_string('auth_fieldlock', 'auth') . '</label>';
     echo html_writer::select($lockoptions, "lockconfig_field_lock_{$field}", $pluginconfig->{"field_lock_$field"}, false);
     echo '</div></div>';
-    
-
     echo '</td>';
-    if (!empty($helptext)) {
-        echo '<td rowspan="' . count($user_fields) . '">' . $helptext . '</td>';
-        $helptext = '';
-    }
     echo '</tr>';
 }

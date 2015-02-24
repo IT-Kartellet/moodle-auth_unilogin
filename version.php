@@ -13,10 +13,14 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
- 
+
 /**
+ * UNILogin authentication plugin
+ *
+ * For more information about the unilogin service, see
+ * http://www.stil.dk/It-og-administration/Brugere-og-adgangsstyring.
+ *
  * @package    auth_unilogin
- * @category   authentication
  * @copyright  2015 Jan Aagaard Meier (IT-Kartellet)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
