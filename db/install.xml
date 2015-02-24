@@ -4,7 +4,7 @@
     xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
 >
   <TABLES>
-    <TABLE NAME="unilogin_tickets" COMMENT="">
+    <TABLE NAME="auth_unilogin_tickets" COMMENT="">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="ticket" TYPE="char" LENGTH="32" NOTNULL="true"/>

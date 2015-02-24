@@ -26,6 +26,7 @@
  */
 
 defined('MOODLE_INTERNAL') || die();
+global $CFG;
 
 $settings = new admin_settingpage('auth_unilogin', 'UNI Login');
 
@@ -104,7 +105,7 @@ $settings->add(new admin_setting_configtext(
 $settings->add(new admin_setting_configselect(
     'auth_unilogin/login_behaviour',
     get_string('login_behaviour', 'auth_unilogin'),
-    get_string('login_behaviour_description', 'auth_unilogin'),
+    get_string('login_behaviour_description', 'auth_unilogin', $CFG->wwwroot),
     'link',
     array(
         'link' => get_string('login_behaviour_link', 'auth_unilogin'),

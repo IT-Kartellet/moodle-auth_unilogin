@@ -174,11 +174,11 @@ class auth_plugin_unilogin extends auth_plugin_base {
         if ($this->config->validation_behaviour === 'db') {
             global $DB;
 
-            if ($DB->record_exists('unilogin_tickets', array('ticket' => $auth))) {
+            if ($DB->record_exists('auth_unilogin_tickets', array('ticket' => $auth))) {
                 return false;
             }
 
-            $DB->insert_record('unilogin_tickets', array('ticket' => $auth));
+            $DB->insert_record('auth_unilogin_tickets', array('ticket' => $auth));
             return true;
         } else {
             $timestamp = DateTime::createFromFormat('YmdHis T', $timestamp . ' Z')->getTimestamp();
