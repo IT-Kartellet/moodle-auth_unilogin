@@ -13,17 +13,16 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
+ 
 /**
- * Version information
- *
  * @package    auth_unilogin
- * @copyright  2014 IT Kartellet
- * @license    MIT
+ * @category   authentication
+ * @copyright  2015 Jan Aagaard Meier (IT-Kartellet)
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2014022001;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2014050800;        // Requires this Moodle version
+$plugin->version   = 2014022002;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->requires  = 2013040500;        // Requires this Moodle version
 $plugin->component = 'auth_unilogin';    // Full name of the plugin (used for diagnostics)

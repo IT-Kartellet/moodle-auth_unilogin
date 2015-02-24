@@ -6,8 +6,6 @@ YUI.add('moodle-auth_unilogin-link_injector', function(Y) {
 			
 			link = Y.Node.create('<a href="' + link + '">' + text + "</a>");
 
-			console.log(selector)
-			console.log(elem)
 			elem.insertBefore(link);
 		}
 	};

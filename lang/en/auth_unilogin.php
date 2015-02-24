@@ -13,15 +13,18 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
+ 
 /**
- * Strings for component 'auth_unilogin', language 'en'.
+ * This is a one-line short description of the file.
+ *
+ * You can have a rather longer description of the file as well,
+ * if you like, and it can span multiple lines.
  *
  * @package    auth_unilogin
- * @copyright  2014 IT Kartellet
- * @license    MIT
+ * @category   authentication
+ * @copyright  2015 Jan Aagaard Meier (IT-Kartellet)
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 
 // Settings overview page
 $string['auth_unilogindescription'] = 'A plugin to login users using the Danish UNI Login service.';
@@ -79,5 +82,4 @@ $string['login_behaviour_link_selector_description'] = 'The selector to insert t
 $string['fieldlocks'] = 'Select what should happen to each user field.';
 
 $string['ticketvalidationerror'] = 'The ticket returned by UNI•Login could not be validated. It has either expired, or already been used.';
-$string['missingparameterserror'] = 'Missing parameters';
 $string['webserviceerror'] = 'There was en error contacting the UNI•Login webservice';
