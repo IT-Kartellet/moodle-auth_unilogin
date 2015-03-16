@@ -74,8 +74,12 @@ $string['login_behaviour_description'] = 'How should the page behave when the us
 $string['login_behaviour_link'] = 'Link';
 $string['login_behaviour_redirect'] = 'Redirect';
 $string['login_behaviour_link_text'] = 'Link text';
-$string['login_behaviour_link_text_description'] = 'The text used to display a link to the UNI•Login page.';
+$string['login_behaviour_link_text_default'] = 'UNI•Login';
+$string['login_behaviour_link_text_description'] = 'The text used to display a link to the UNI•Login page. The string is sent through
+ [`format_string`](https://docs.moodle.org/dev/Output_functions#format_string.28.29) before being output, so it supports
+ [Multi-language strings](https://docs.moodle.org/28/en/Multi-language_content_filter)';
 $string['login_behaviour_link_selector'] = 'Link insertion selector';
+$string['login_behaviour_link_selector_default'] = '#login';
 $string['login_behaviour_link_selector_description'] = 'The selector to insert the login link into. The login link will be placed in as the last child of the selected element. With the bootstrap theme, this means that #login will insert it after the "forgot your password" link';
 
 $string['fieldlocks'] = 'Select what should happen to each user field.';

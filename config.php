@@ -113,11 +113,11 @@ $settings->add(new admin_setting_configselect(
     )
 );
 
-$settings->add(new admin_setting_configtext(
+$settings->add(new admin_setting_configtextarea(
     'auth_unilogin/login_behaviour_link_text',
     get_string('login_behaviour_link_text', 'auth_unilogin'),
     get_string('login_behaviour_link_text_description', 'auth_unilogin'),
-    'UNI•Login'
+    get_string('login_behaviour_link_text_default', 'auth_unilogin')
     )
 );
 
@@ -125,7 +125,7 @@ $settings->add(new admin_setting_configtext(
     'auth_unilogin/login_behaviour_link_selector',
     get_string('login_behaviour_link_selector', 'auth_unilogin'),
     get_string('login_behaviour_link_selector_description', 'auth_unilogin'),
-    '#login'
+    get_string('login_behaviour_link_selector_default', 'auth_unilogin')
     )
 );
 

@@ -38,6 +38,14 @@ class auth_plugin_unilogin extends auth_plugin_base {
     function __construct() {
         $this->authtype = 'unilogin';
         $this->config = get_config('auth_unilogin');
+
+        // Set default values for text and selector - if these are empty the link will disappear. See https://github.com/IT-Kartellet/moodle-auth_unilogin/issues/3
+        if (empty($this->config->login_behaviour_link_text)) {
+            $this->config->login_behaviour_link_text = get_string('login_behaviour_link_text_default', 'auth_unilogin');
+        }
+        if (empty($this->config->login_behaviour_link_selector)) {
+            $this->config->login_behaviour_link_selector = get_string('login_behaviour_link_selector_default', 'auth_unilogin');
+        }
     }
 
     /**
@@ -61,7 +69,7 @@ class auth_plugin_unilogin extends auth_plugin_base {
                 'M.auth_unilogin.link_injector.init',
                 array(
                     $this->get_url(),
-                    $this->config->login_behaviour_link_text,
+                    format_string($this->config->login_behaviour_link_text),
                     $this->config->login_behaviour_link_selector
                 )
             );

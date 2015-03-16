@@ -27,7 +27,7 @@ Denne indstilling har kun effekt hvis valideringsstrategien er sat til "Tid" ove
 ### Login opførsel, tekst og selector
 Login kan fungere på to måder:
 
-* Link indsætter et link på moodles normale login side. Tekst og selector bruges til at vælge teksten på linket, og hvilken CSS selector linket skal sættes ind efter.
+* Link indsætter et link på moodles normale login side. Tekst og selector bruges til at vælge teksten på linket, og hvilken CSS selector linket skal sættes ind efter. Teksten understøtter [flersprogede strenge](https://docs.moodle.org/28/en/Multi-language_content_filter)
 * Redirect sender brugeren direkte videre til unilogin når de trykker på login. Det betyder, at det ikke vil være muligt at logge ind på andre måder end med UNILOGIN.
 
 ### Lock user fields
@@ -55,7 +55,7 @@ The maximal age, in seconds that a ticket can have in order for it to be conside
 ### Login behaviour, text and selector
 Login can work in two ways:
 
-* Link will insert a link on moodle regular login page, using javascript
+* Link will insert a link on moodle regular login page, using javascript. The text field supports [multi-lingual strings](https://docs.moodle.org/28/en/Multi-language_content_filter)
 * Redirect will redirect the user as soon as they click login. This means users will only be able to login with uinlogin.
 
 ### Lock user fields

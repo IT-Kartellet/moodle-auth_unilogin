@@ -32,4 +32,4 @@ $plugin->requires  = 2013040500;        // Requires this Moodle version
 $plugin->component = 'auth_unilogin';    // Full name of the plugin (used for diagnostics)
 
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release  = 'v1.0.1';
+$plugin->release  = 'v1.0.2';
