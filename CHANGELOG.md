@@ -1,3 +1,6 @@
+# Next
+* Remove the unused argument passed to `encode_auth` in `get_url`
+
 # v1.0.2
 * Pass the `login_behaviour_link_text` through `format_string` to allow multilingual content.
 * Apply default values to link selector and text

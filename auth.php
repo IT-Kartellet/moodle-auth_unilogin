@@ -128,7 +128,7 @@ class auth_plugin_unilogin extends auth_plugin_base {
             case 'login':
                 $id = $this->config->id;
                 $path = $this->encode_return_url();
-                $auth = $this->encode_auth($path);
+                $auth = $this->encode_auth();
 
                 return $base . "unilogin/login.cgi?id={$id}&path=$path&auth=$auth";
             case 'logout':
