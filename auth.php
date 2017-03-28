@@ -190,7 +190,7 @@ class auth_plugin_unilogin extends auth_plugin_base {
             return true;
         } else {
             $timestamp = DateTime::createFromFormat('YmdHis T', $timestamp . ' Z')->getTimestamp();
-            return (time() - $this->config->validatetime) < $timestamp;
+            return (time() - $this->config->validatetime) <= $timestamp;
         }
     }
 
